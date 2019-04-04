@@ -1,11 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:App3"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:App3" 
              x:Class="App3.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+
+    <StackLayout>
+        <Picker x:Name="Picker1" Title="Professor">
+            <Picker.Items>
+                <x:String>1 - Paulo</x:String>
+                <x:String>2 - Arnaldo</x:String>
+                <x:String>3 - Fantin</x:String>
+                <x:String>4 - André</x:String>
+            </Picker.Items>
+        </Picker>
+        <Picker x:Name="Picker2" Title="Materia">
+            <Picker.Items>
+                <x:String>Calc 1</x:String>
+                <x:String>Calc 2</x:String>
+                <x:String>Calc 3</x:String>
+                <x:String>Calc 4</x:String>
+            </Picker.Items>
+        </Picker>
+        <Entry x:Name="Entry1" Placeholder="Matrícula" />
+        <Entry x:Name="Entry2" Keyboard="Numeric" Placeholder="Nota" />
+
+        <Label x:Name="Label1" IsVisible="False"
+               Text="Aprovado" TextColor="DarkGreen" />
+        
+        <Label x:Name="Label2" IsVisible="False"
+               Text="Reprovado" TextColor="Red" />
+        
+        <Label x:Name="Label3" IsVisible="False"
+               Text="Professor nao coincide com a materia selecionada" TextColor="Red" />
+        
+        <Label x:Name="Label4" IsVisible="False"
+               Text="Os Campos ano foram preenchidos" TextColor="IndianRed" />
+
+        <Button x:Name="Button" Text="Verificar"
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="Center"
+                Clicked="OnButtonClicked" />
+
+    </StackLayout>
 
 </ContentPage>

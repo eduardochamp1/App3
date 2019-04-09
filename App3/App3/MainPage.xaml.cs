@@ -4,16 +4,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using App3.Modelos;
 
 namespace App3
 {
 	public partial class MainPage : ContentPage
 	{
-      
+        // vetor de disciplinas
+        Disciplina[] disciplinas = new Disciplina[4]
+        {
+            new Disciplina("Calc 1", 1),
+            new Disciplina("Calc 2", 2),
+            new Disciplina("Calc 3", 3),
+            new Disciplina("Calc 4", 4)
+        };
+        // vetor de disciplinas
+        Professor[] Professores = new Professor[4]
+        {
+            new Professor("Paulo", 1),
+            new Professor("Arnaldo", 2),
+            new Professor("Fantin", 3),
+            new Professor("Andre", 4)
+        };
+
         public MainPage()
 		{
 			InitializeComponent();
-		}
+            foreach (Disciplina disciplina in disciplinas)
+            {
+                // adicionar um elemento na caixa de seleção
+                Picker2.Items.Add(disciplina.semestre + " - " + disciplina.nome);
+            }
+            foreach (Professor professor in Professores)
+            {
+                // adicionar um elemento na caixa de seleção
+                Picker1.Items.Add(professor.semestre + " - " + professor.nome);
+            }
+        }
         void OnButtonClicked(object sender, EventArgs args)
         {
             // desabilitar mensagens
@@ -29,7 +56,10 @@ namespace App3
                 Picker1.SelectedIndex >= 0 &&
                 Picker2.SelectedIndex >= 0 )
             {
-                if(Picker1.SelectedIndex == Picker2.SelectedIndex)
+
+            
+
+                if (Picker1.SelectedIndex == Picker2.SelectedIndex)
                 {
                     if(int.Parse(Entry2.Text) >= 6)
                     {

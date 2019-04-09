@@ -8,18 +8,10 @@
     <StackLayout>
         <Picker x:Name="Picker1" Title="Professor">
             <Picker.Items>
-                <x:String>1 - Paulo</x:String>
-                <x:String>2 - Arnaldo</x:String>
-                <x:String>3 - Fantin</x:String>
-                <x:String>4 - André</x:String>
             </Picker.Items>
         </Picker>
         <Picker x:Name="Picker2" Title="Materia">
             <Picker.Items>
-                <x:String>Calc 1</x:String>
-                <x:String>Calc 2</x:String>
-                <x:String>Calc 3</x:String>
-                <x:String>Calc 4</x:String>
             </Picker.Items>
         </Picker>
         <Entry x:Name="Entry1" Placeholder="Matrícula" />

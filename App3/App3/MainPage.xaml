@@ -26,8 +26,10 @@
         <Label x:Name="Label3" IsVisible="False"
                Text="Professor nao coincide com a materia selecionada" TextColor="Red" />
         
-        <Label x:Name="Label4" IsVisible="False"
-               Text="Os Campos ano foram preenchidos" TextColor="IndianRed" />
+        <Label x:Name="Label4" IsVisible="True"
+              TextColor="IndianRed" />
+        <Label x:Name="Label5" IsVisible="False"
+              Text="Matricula:" TextColor="Sienna" />
 
         <Button x:Name="Button" Text="Verificar"
                 VerticalOptions="EndAndExpand"

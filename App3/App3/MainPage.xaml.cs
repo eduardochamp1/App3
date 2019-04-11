@@ -38,7 +38,7 @@ namespace App3
             foreach (Professor professor in Professores)
             {
                 // adicionar um elemento na caixa de seleção
-                Picker1.Items.Add(professor.semestre + " - " + professor.nome);
+                Picker1.Items.Add(professor.codigo + " - " + professor.nome);
             }
         }
         void OnButtonClicked(object sender, EventArgs args)
@@ -47,7 +47,7 @@ namespace App3
             Label1.IsVisible = false;
             Label2.IsVisible = false;
             Label3.IsVisible = false;
-            Label4.IsVisible = false;
+            Label5.IsVisible = false;
             // verificar se período e semestre foram selecionados
             if (Entry1.Text != null &&
                 Entry2.Text != null &&
@@ -57,12 +57,18 @@ namespace App3
                 Picker2.SelectedIndex >= 0 )
             {
 
-            
+                Nota nota = new Nota();
+                nota.nome = Entry1.Text;
+                nota.valor = int.Parse(Entry2.Text);
 
-                if (Picker1.SelectedIndex == Picker2.SelectedIndex)
+                
+
+                if (disciplinas[Picker1.SelectedIndex].Lecionar(Professores[Picker2.SelectedIndex]))
                 {
-                    if(int.Parse(Entry2.Text) >= 6)
+                    if(nota.Aprovar())
                     {
+                        Label5.IsVisible = true;
+                        Label4.Text = nota.nome;
                         Label1.IsVisible = true;
                     }
                     else
